@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest an improvement, new label format, or workflow idea
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the friction or use case you run into with shipping labels.
+      placeholder: e.g. I print labels from Courier X which puts two labels per A4 page...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe how you'd like it to work.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Marketplace/courier, thermal printer model, or mockups (please keep any label examples anonymized).
+    validations:
+      required: false

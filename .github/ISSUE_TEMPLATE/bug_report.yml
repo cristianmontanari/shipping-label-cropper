@@ -1,0 +1,83 @@
+name: Bug report
+description: Report a bug, crash, cropping issue, or printing problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug!
+        **Privacy reminder:** Please **never** attach screenshots or PDFs containing real customer names, addresses, phone numbers, or live tracking numbers. Redact or anonymize them first.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug.
+      placeholder: Describe what went wrong and what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Open a PDF from...
+        2. Click '...'
+        3. See error...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS
+        - Linux (Debian/Ubuntu)
+        - Linux (Fedora)
+        - Linux (Arch)
+        - Linux (Other)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: Installation method
+      options:
+        - Windows standalone executable (GitHub Release)
+        - Source / Git (install_menu.bat / install_menu.sh)
+        - Manual Python virtual environment
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: App version & Python version
+      description: Run `python main.py --version` or check the Release tag you downloaded.
+      placeholder: e.g. v1.0.0, Python 3.12.4
+    validations:
+      required: false
+
+  - type: input
+    id: printer
+    attributes:
+      label: Thermal printer model & driver (if printing-related)
+      placeholder: e.g. Zebra GK420d / Rollo X1038 / Munbyn ITPP941 (Windows driver / CUPS)
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error message / screenshots (anonymized)
+      description: Paste any terminal output, error messages, or redacted screenshots.
+      render: text
+    validations:
+      required: false

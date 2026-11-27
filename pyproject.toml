@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shipping-label-cropper"
+dynamic = ["version"]
+description = "Minimal desktop app to crop A4 PDF shipping labels to crisp, 100% vector 4x6 / 10x15 cm thermal labels"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Cristian Montanari" },
+]
+keywords = [
+    "shipping-label",
+    "thermal-printer",
+    "pdf-cropper",
+    "4x6",
+    "10x15",
+    "zebra",
+    "rollo",
+    "ecommerce",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Desktop Environment",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Printing",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "pymupdf>=1.24.0,<2.0",
+    "pillow>=10.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/cristianmontanari/shipping-label-cropper"
+Repository = "https://github.com/cristianmontanari/shipping-label-cropper"
+Issues = "https://github.com/cristianmontanari/shipping-label-cropper/issues"
+Changelog = "https://github.com/cristianmontanari/shipping-label-cropper/blob/main/CHANGELOG.md"
+
+[project.scripts]
+shipping-label-cropper = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+include = ["shipping_label_cropper*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "shipping_label_cropper.__version__" }
